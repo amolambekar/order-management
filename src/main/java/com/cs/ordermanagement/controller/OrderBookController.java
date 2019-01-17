@@ -2,12 +2,10 @@ package com.cs.ordermanagement.controller;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +22,16 @@ import com.cs.ordermanagement.domain.Execution;
 import com.cs.ordermanagement.domain.Instrument;
 import com.cs.ordermanagement.domain.Order;
 import com.cs.ordermanagement.domain.OrderBook;
-import com.cs.ordermanagement.domain.OrderBook.Status;
+import com.cs.ordermanagement.domain.OrderBook.OrderBookStatus;
 import com.cs.ordermanagement.repository.OrderBookRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping("/v1/orderbooks")
-public class OrderBookController {
+public class OrderBookController
+ {
 	
 	private OrderBookService orderBokkService;
 	
@@ -47,39 +49,33 @@ public class OrderBookController {
 	@Transactional
 	@PostMapping(path="/{instrumentId}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<OrderBook> openNewOrderBook(@PathVariable(name="instrumentId")Long instrumentId) {
-        Instrument instrument = new Instrument();
-        instrument.setInstrumentId(instrumentId);
-		OrderBook orderBook = new OrderBook();
-		orderBook.setInstrumentId(instrument);
-		orderBook.setStatus(Status.OPEN);
-		orderBook =orderBookRepository.save(orderBook);
+        OrderBook orderBook = orderBokkService.createAndopenNewWorkBook(instrumentId);
 		return new ResponseEntity<OrderBook>(orderBook,HttpStatus.CREATED);
 
 	}
+
+
+	
 	
 	@Transactional
 	@PutMapping(path="/{orderBookId}/{status}")
 	public void updateOrderBookStatus(@PathVariable(name="orderBookId")Long orderBookId,@PathVariable(name="status")String status) {
-		OrderBook orderBook =orderBookRepository.findOne(orderBookId);
-		orderBook.setStatus(Status.valueOf(status));
-		orderBookRepository.save(orderBook);
+	 orderBokkService.updateOrderBookStatus(orderBookId,status);
 
 	}
 	
 	@Transactional
 	@PostMapping(path="/{orderBookId}/orders")
 	public void addOrders(@PathVariable Long orderBookId,@RequestBody List<Order> orders){
-		OrderBook orderBook = orderBookRepository.findOne(orderBookId);
-		if(orderBook.getStatus().equals(Status.OPEN)) {
-			orderBook.getOrders().addAll(orders);
-			orderBookRepository.save(orderBook);
-		}
+		orderBokkService.addOrders(orderBookId,orders);
 	}
 	
 	@Transactional
-	@PostMapping(path="/{orderBookId}/executions") 
-	public void addExecution(@PathVariable Long orderBookId, @RequestBody Execution execution) {
-		this.orderBokkService.addExecution(execution, orderBookId);
+	@PostMapping(path="/{orderBookId}/executions/{quantity}/{price}") 
+	public void addExecution(@PathVariable(name="orderBookId") Long orderBookId, @PathVariable(name="quantity") Long quantity,@PathVariable(name="price") BigDecimal price) {
+		Execution executionId =this.orderBokkService.addExecution( orderBookId,quantity,price);
+		if(executionId!=null)
+		log.trace("the execution Id is ***********************************  "+executionId.getExecutionId());
 	}
 	
 	@GetMapping(path="/{orderBookId}")
@@ -89,6 +85,8 @@ public class OrderBookController {
     
     
     }
+	
+	
 	
 	
     	

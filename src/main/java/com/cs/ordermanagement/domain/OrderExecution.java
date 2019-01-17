@@ -1,6 +1,5 @@
 package com.cs.ordermanagement.domain;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -9,35 +8,43 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.OneToOne;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
-@NoArgsConstructor
-@Table(name="EXECUTION")
-public class Execution implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7059165426884645187L;
-
+@RequiredArgsConstructor
+public class OrderExecution {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long executionId;
+	private Long OrderExecutionId;
+	
+	
+	@OneToOne(fetch = FetchType.EAGER, optional = false,mappedBy="orderExecution")
+	private Order orderId;
 	
 	@Column
 	private Long quantity;
 	
 	@Column
-	private BigDecimal price;
+	private BigDecimal executionPrice;
 	
-	 @Column(name="ORDER_BOOK_ID",nullable=false )
-		private Long orderBookId;
+	public enum OrderStatus{
+		VALID,INVALID
+	}
+	
+	
+	@Column	
+	private OrderStatus orderStatus;
+	
+	
+	
+	
+ 
 
 }

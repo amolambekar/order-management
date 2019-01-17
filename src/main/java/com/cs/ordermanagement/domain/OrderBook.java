@@ -1,12 +1,12 @@
 package com.cs.ordermanagement.domain;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
+import java.util.Objects;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -20,12 +20,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Version;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.cs.ordermanagement.domain.Order.OrderStatus;
+import com.cs.ordermanagement.repository.OrderBookRepository;
+import com.cs.ordermanagement.repository.OrderRepository;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,9 +35,23 @@ import lombok.Setter;
 @Setter
 @Entity
 @NoArgsConstructor
+
 public class OrderBook implements Serializable {
 
-	private static final long serialVersionUID = 8513860251912363310L;
+	
+	private static final long serialVersionUID = -4514295710367090347L;
+	
+	//private final Map<String, OrderBook> accounts = new WeakH<>();
+	
+	public OrderBook (Instrument instrument,List<Order>orders,List<Execution>executions,OrderBookStatus status) {
+		this.instrumentId=instrument;
+		this.orders=orders;
+		this.executions=executions;
+		this.orderBookStatus=status;
+	}
+    
+	
+	public static final ReentrantLock getLock(Long orderBookId) { return OrderBookRepository.orderBookLockMap.get(orderBookId);}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,24 +61,23 @@ public class OrderBook implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	private Instrument instrumentId;
 
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY )
 	@JoinColumn(name = "order_book_id")
-	private Set<Order> orders = new TreeSet<>((o1,o2)->o2.getOrderQuantity().compareTo(o1.getOrderQuantity()));
+	private List<Order> orders = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
 	@JoinColumn(name = "order_book_id")
-	private List<Execution> executions;
+	private List<Execution> executions=new ArrayList<>();
 
-	public enum Status {
+	public enum OrderBookStatus {
 		OPEN, CLOSED, EXECUTED
 	};
 
 	@NotNull
 	@Column
-	private Status status;
+	private OrderBookStatus orderBookStatus;
 	
-	@Version
-	private Long version;
+	
 	
 
 
@@ -78,6 +91,19 @@ public class OrderBook implements Serializable {
    @Temporal(TemporalType.TIMESTAMP)
    @Column
    private Date modifiedDate;
+   
+   public boolean equals(Object orderBook) {
+	   if(orderBook!=null && orderBook instanceof OrderBook) {
+		   return this.orderBookId.equals(((OrderBook)orderBook).getOrderBookId());
+	   }
+	   return false;
+	   
+   }
+   
+   @Override
+   public int hashCode() {
+       return Objects.hashCode(this.orderBookId);
+   }
 	
 	
 }

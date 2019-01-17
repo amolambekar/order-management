@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.UniqueConstraint;
 
 import lombok.AllArgsConstructor;
@@ -23,10 +24,6 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class Instrument implements Serializable{
 	
-	
-	public Instrument(String instrumentName) {
-		// TODO Auto-generated constructor stub
-	}
 
 	private static final long serialVersionUID = -1434276552156346862L;
 
@@ -38,6 +35,6 @@ public class Instrument implements Serializable{
 	@Column(unique=true  )
 	private String name;
 	
-	
+    	
 
 }

@@ -1,0 +1,778 @@
+00:01:29.043 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 6948 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:01:29.050 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:01:29.051 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:03:24.071 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 2996 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:03:24.077 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:03:24.077 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:03:48.902 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 19548 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:03:48.905 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:03:48.906 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:03:57.081 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.524 seconds (JVM running for 9.673)
+00:07:06.615 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 16328 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:07:06.620 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:07:06.620 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:07:17.131 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 10.867 seconds (JVM running for 12.103)
+00:13:43.967 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 6076 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:13:43.973 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:13:43.973 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:13:53.382 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 9.764 seconds (JVM running for 10.886)
+00:13:53.859 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status CLOSED
+00:13:53.881 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:13:53.882 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:13:53.882 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:13:53.882 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:13:53.882 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:13:53.882 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:13:53.990 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:13:54.001 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status CLOSED
+00:13:54.009 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:13:54.009 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      1             2500            0
+00:13:54.009 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:13:54.009 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      2             1500            0
+00:13:54.009 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:13:54.009 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      3             1000            0
+00:13:54.116 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:13:54.127 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+00:13:54.132 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+00:13:54.150 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+00:13:54.152 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status EXECUTED
+00:13:54.161 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+00:13:54.166 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+00:13:54.169 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+00:13:54.181 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+00:13:54.190 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+00:13:54.201 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+00:14:14.612 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 7828 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:14:14.617 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:14:14.618 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:14:24.462 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 10.216 seconds (JVM running for 11.527)
+00:14:24.986 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status CLOSED
+00:14:25.009 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:14:25.009 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:14:25.010 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:14:25.010 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:14:25.010 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:14:25.010 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:14:25.117 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:14:25.131 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+00:14:25.135 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:14:25.135 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      1             2500            0
+00:14:25.135 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:14:25.135 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      2             1500            0
+00:14:25.138 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:14:25.139 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      3             1000            0
+00:14:25.245 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:14:25.260 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status EXECUTED
+00:14:25.262 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+00:14:25.272 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+00:14:25.286 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+00:14:25.298 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+00:14:25.301 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status EXECUTED
+00:14:25.309 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+00:14:25.313 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+00:14:25.320 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+00:14:25.335 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+00:19:52.715 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 2368 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:19:52.720 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:19:52.720 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:20:00.849 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.491 seconds (JVM running for 9.56)
+00:20:01.355 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+00:20:01.368 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:01.368 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:20:01.381 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:01.381 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:20:01.381 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:01.381 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:20:01.486 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:20:01.501 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status OPEN
+00:20:01.519 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:20:01.521 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:20:01.549 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+00:20:01.559 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+00:20:01.584 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status OPEN
+00:20:01.594 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status OPEN
+00:20:01.599 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:20:01.610 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:20:01.630 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status OPEN
+00:20:01.640 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status OPEN
+00:20:43.101 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 2680 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:20:43.107 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:20:43.107 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:20:51.443 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.66 seconds (JVM running for 9.977)
+00:20:51.953 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status CLOSED
+00:20:51.973 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:51.973 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:20:51.973 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:51.973 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:20:51.976 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:51.976 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:20:52.085 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:20:52.097 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:20:52.105 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:52.105 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            0
+00:20:52.106 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:52.106 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            0
+00:20:52.106 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:20:52.106 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            0
+00:20:52.227 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:20:52.241 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+00:20:52.265 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+00:20:52.277 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+00:20:52.301 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status EXECUTED
+00:20:52.325 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+00:20:52.333 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+00:20:52.339 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+00:20:52.351 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+00:20:52.356 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+00:20:52.361 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+00:22:39.319 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 10900 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:22:39.322 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:22:39.323 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:22:47.616 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.655 seconds (JVM running for 9.783)
+00:22:48.088 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+00:22:48.120 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.120 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:22:48.121 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.121 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:22:48.121 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.121 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:22:48.250 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:22:48.255 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.255 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:22:48.255 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.256 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:22:48.256 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.256 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:22:48.393 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status CLOSED
+00:22:48.398 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.398 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:22:48.398 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.398 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:22:48.398 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.398 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:22:48.536 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status CLOSED
+00:22:48.537 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.537 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:22:48.537 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.537 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:22:48.537 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.542 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:22:48.674 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status CLOSED
+00:22:48.678 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.678 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:22:48.678 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.678 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:22:48.678 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.678 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:22:48.815 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status CLOSED
+00:22:48.820 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.820 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:22:48.820 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.820 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:22:48.820 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:22:48.820 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:23:45.287 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 3624 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:23:45.290 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:23:45.291 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:23:53.516 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.571 seconds (JVM running for 9.716)
+00:23:54.014 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status CLOSED
+00:23:54.035 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:23:54.035 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:23:54.035 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:23:54.035 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:23:54.036 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:23:54.036 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:23:54.146 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:23:54.163 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:23:54.167 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+00:23:54.187 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status OPEN
+00:23:54.203 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status OPEN
+00:23:54.225 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:23:54.252 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status OPEN
+00:23:54.265 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status OPEN
+00:23:54.268 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:23:54.272 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:23:54.286 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status OPEN
+00:23:54.295 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status OPEN
+00:24:42.422 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 19380 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:24:42.429 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:24:42.429 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:24:50.511 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.438 seconds (JVM running for 9.654)
+00:24:50.997 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status CLOSED
+00:24:51.022 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:24:51.022 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:24:51.022 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:24:51.023 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:24:51.023 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:24:51.023 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:24:51.126 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:24:51.143 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status OPEN
+00:24:51.164 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status OPEN
+00:24:51.178 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:24:51.179 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:24:51.198 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:24:51.206 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:24:51.227 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status OPEN
+00:24:51.246 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+00:24:51.256 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+00:24:51.263 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status OPEN
+00:24:51.275 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status OPEN
+00:24:57.904 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 15032 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:24:57.912 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:24:57.913 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:25:08.749 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 11.241 seconds (JVM running for 12.872)
+00:25:09.359 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:25:26.198 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:25:26.208 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:25:26.211 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:25:26.221 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:25:26.230 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:25:26.231 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:25:49.342 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 8448 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:25:49.351 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:25:49.351 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:26:00.035 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 11.078 seconds (JVM running for 12.469)
+00:26:00.643 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status CLOSED
+00:26:34.376 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 1920 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:26:34.382 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:26:34.383 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:26:45.363 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 11.374 seconds (JVM running for 12.682)
+00:26:46.011 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+00:27:00.213 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:27:00.220 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:27:00.225 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:27:00.225 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:27:00.225 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:27:00.242 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:27:20.596 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 17232 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:27:20.603 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:27:20.603 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:27:30.937 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 10.726 seconds (JVM running for 12.013)
+00:27:33.848 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+00:28:40.375 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 10636 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:28:40.391 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:28:40.391 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:28:51.208 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 11.205 seconds (JVM running for 12.855)
+00:28:55.679 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+00:34:44.394 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 7232 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:34:44.402 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:34:44.402 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:34:52.508 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.466 seconds (JVM running for 9.557)
+00:34:52.994 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status CLOSED
+00:34:53.018 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:34:53.019 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:34:53.019 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:34:53.019 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:34:53.019 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:34:53.019 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:34:53.129 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookController - the execution Id is ***********************************  null
+00:34:53.146 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:34:53.150 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status OPEN
+00:34:53.177 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status OPEN
+00:34:53.179 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status OPEN
+00:34:53.195 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+00:34:53.213 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:34:53.221 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:34:53.242 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+00:34:53.243 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+00:34:53.260 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status OPEN
+00:34:53.273 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status OPEN
+00:35:22.322 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 13876 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:35:22.329 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:35:22.329 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:35:33.045 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 11.104 seconds (JVM running for 12.465)
+00:35:43.000 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:43:13.370 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 3768 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:43:13.375 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:43:13.375 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:43:21.649 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.629 seconds (JVM running for 9.737)
+00:43:22.180 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status CLOSED
+00:43:22.203 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:43:22.203 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:43:22.203 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:43:22.205 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:43:22.205 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:43:22.205 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:43:22.319 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status CLOSED
+00:43:22.325 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:43:22.325 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      1             2500            0
+00:43:22.325 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:43:22.325 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      2             1500            0
+00:43:22.325 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:43:22.325 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      3             1000            0
+00:43:22.444 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+00:43:22.451 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+00:43:22.468 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+00:43:22.479 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+00:43:22.490 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+00:43:22.497 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status EXECUTED
+00:43:22.506 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+00:43:22.508 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status EXECUTED
+00:43:22.516 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+00:43:22.521 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+00:46:36.395 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 17312 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:46:36.399 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:46:36.399 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:46:44.899 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.838 seconds (JVM running for 9.976)
+00:46:45.376 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:46:45.399 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:46:45.399 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:46:45.399 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:46:45.399 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:46:45.401 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:46:45.401 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:46:45.524 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:48:00.059 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 7976 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:48:00.063 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:48:00.064 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:48:08.103 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.394 seconds (JVM running for 9.455)
+00:48:08.634 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:48:08.657 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:48:08.657 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:48:08.657 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:48:08.657 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:48:08.660 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:48:08.660 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:48:08.781 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:49:07.161 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 12848 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:49:07.168 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:49:07.169 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:49:15.300 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.481 seconds (JVM running for 9.639)
+00:49:15.746 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:49:15.766 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:49:15.766 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:49:15.766 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:49:15.766 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:49:15.766 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:49:15.770 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:49:15.892 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:52:28.226 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 18220 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:52:28.231 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:52:28.231 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:52:36.444 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.57 seconds (JVM running for 9.819)
+00:52:36.935 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:52:36.961 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:52:36.961 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:52:36.961 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:52:36.964 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:52:36.964 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:52:36.964 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:52:37.091 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:53:07.306 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 19408 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:53:07.309 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:53:07.310 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:53:15.709 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.76 seconds (JVM running for 9.951)
+00:53:16.217 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:53:16.236 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:53:16.236 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:53:16.236 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:53:16.236 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:53:16.239 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:53:16.239 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:53:16.362 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:53:58.117 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 3288 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:53:58.124 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:53:58.124 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:54:06.403 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.631 seconds (JVM running for 9.782)
+00:54:06.891 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:54:06.910 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:54:06.910 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:54:06.910 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:54:06.913 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:54:06.913 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:54:06.913 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:54:07.041 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+00:55:36.065 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 10672 (started by Amol in D:\Sandbox\2019\ordermanagement)
+00:55:36.071 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+00:55:36.071 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+00:55:44.245 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 8.524 seconds (JVM running for 9.717)
+00:55:44.696 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+00:55:44.719 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:55:44.719 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+00:55:44.719 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:55:44.719 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+00:55:44.719 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+00:55:44.719 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+00:55:44.843 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+01:27:33.416 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 11508 (started by Amol in D:\Sandbox\2019\ordermanagement)
+01:27:33.450 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+01:27:33.452 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+01:29:17.016 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 10816 (started by Amol in D:\Sandbox\2019\ordermanagement)
+01:29:17.044 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+01:29:17.045 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+01:32:20.568 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 8132 (started by Amol in D:\Sandbox\2019\ordermanagement)
+01:32:20.603 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+01:32:20.606 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+01:33:33.905 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 21316 (started by Amol in D:\Sandbox\2019\ordermanagement)
+01:33:33.921 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+01:33:33.921 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+01:38:18.188 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 14464 (started by Amol in D:\Sandbox\2019\ordermanagement)
+01:38:18.190 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+01:38:18.190 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+01:38:24.321 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 6.546 seconds (JVM running for 7.537)
+01:38:24.783 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+01:38:24.799 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:38:24.799 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:38:24.799 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:38:24.799 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:38:24.799 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:38:24.799 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:38:24.908 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+01:44:24.312 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 16844 (started by Amol in D:\Sandbox\2019\ordermanagement)
+01:44:24.314 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+01:44:24.315 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+01:44:30.098 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 6.182 seconds (JVM running for 7.178)
+01:44:30.478 [main] INFO  c.c.o.controller.OrderBookService - Thread[main,5,main]calling addOrders method
+01:44:30.572 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]calling service method
+01:44:30.572 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+01:44:30.572 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]calling service method
+01:44:30.572 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status CLOSED
+01:44:30.572 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]calling service method
+01:44:30.572 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status CLOSED
+01:44:30.572 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]calling service method
+01:44:30.572 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status CLOSED
+01:44:30.572 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]calling service method
+01:44:30.572 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]orderBook is found with status CLOSED
+01:44:30.588 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]calling service method
+01:44:30.588 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status CLOSED
+01:44:30.588 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]calling service method
+01:44:30.588 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+01:44:30.588 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]calling service method
+01:44:30.588 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]orderBook is found with status CLOSED
+01:44:30.603 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]calling service method
+01:44:30.603 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]orderBook is found with status CLOSED
+01:44:30.603 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]calling service method
+01:44:30.603 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]orderBook is found with status CLOSED
+01:44:30.603 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.603 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.603 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.603 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.603 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.603 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.603 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.603 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.603 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.603 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.603 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.603 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.603 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.619 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.619 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.619 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.619 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.619 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.619 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.619 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.619 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.619 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.619 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.619 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.619 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.619 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.619 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.619 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.619 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.619 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.619 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.619 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.619 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]calling service method
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]orderBook is found with status CLOSED
+01:44:30.619 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.619 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.619 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.619 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.619 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.634 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.634 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:44:30.634 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.634 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:44:30.634 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:44:30.634 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:44:30.634 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:44:30.680 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]calling service method
+01:44:30.680 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status OPEN
+01:46:43.643 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 17196 (started by Amol in D:\Sandbox\2019\ordermanagement)
+01:46:43.643 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+01:46:43.643 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+01:46:49.525 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 6.26 seconds (JVM running for 7.254)
+01:46:49.911 [main] INFO  c.c.o.controller.OrderBookService - Thread[main,5,main]calling addOrders method
+01:46:49.974 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]calling service method
+01:46:49.974 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]calling service method
+01:46:49.974 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status CLOSED
+01:46:49.974 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status CLOSED
+01:46:49.974 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]calling service method
+01:46:49.974 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+01:46:49.974 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]calling service method
+01:46:49.974 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]orderBook is found with status CLOSED
+01:46:49.989 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]calling service method
+01:46:49.989 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]orderBook is found with status CLOSED
+01:46:49.989 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]calling service method
+01:46:49.989 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status CLOSED
+01:46:49.989 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]calling service method
+01:46:49.989 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]orderBook is found with status CLOSED
+01:46:49.989 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]calling service method
+01:46:49.989 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]orderBook is found with status CLOSED
+01:46:49.989 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]calling service method
+01:46:50.005 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]orderBook is found with status CLOSED
+01:46:50.005 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.005 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.005 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.005 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.005 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.005 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.005 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.005 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]calling service method
+01:46:50.005 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status CLOSED
+01:46:50.005 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.005 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.005 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.005 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.005 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.021 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.021 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.021 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.021 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.021 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.021 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.021 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.036 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.036 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+01:46:50.036 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.036 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+01:46:50.036 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.036 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+01:46:50.036 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.058 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]calling service method
+01:46:50.058 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+01:46:50.068 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.068 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            0
+01:46:50.068 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.068 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            0
+01:46:50.068 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+01:46:50.068 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            0
+01:46:50.068 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+01:46:50.069 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]calling service method
+01:46:50.069 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status OPEN
+01:46:50.072 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]calling service method
+01:46:50.072 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]orderBook is found with status OPEN
+01:46:50.099 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]calling service method
+01:46:50.099 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]orderBook is found with status OPEN
+01:46:50.100 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]calling service method
+01:46:50.100 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status OPEN
+01:46:50.105 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]calling service method
+01:46:50.105 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]orderBook is found with status EXECUTED
+01:46:50.105 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]calling service method
+01:46:50.105 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+01:46:50.105 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]calling service method
+01:46:50.105 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+01:46:50.105 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]calling service method
+01:46:50.105 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+01:46:50.105 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]calling service method
+01:46:50.105 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+01:46:50.105 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]calling service method
+01:46:50.105 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]orderBook is found with status EXECUTED
+01:46:50.120 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]calling service method
+01:46:50.120 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]orderBook is found with status EXECUTED
+02:21:37.416 [main] INFO  c.c.o.OrdermanagementApplicationTests - Starting OrdermanagementApplicationTests on DESKTOP-EGVF0MG with PID 12968 (started by Amol in D:\Sandbox\2019\ordermanagement)
+02:21:37.416 [main] DEBUG c.c.o.OrdermanagementApplicationTests - Running with Spring Boot v1.5.8.RELEASE, Spring v4.3.12.RELEASE
+02:21:37.416 [main] INFO  c.c.o.OrdermanagementApplicationTests - No active profile set, falling back to default profiles: default
+02:21:42.849 [main] INFO  c.c.o.OrdermanagementApplicationTests - Started OrdermanagementApplicationTests in 5.663 seconds (JVM running for 6.4)
+02:21:43.189 [main] INFO  c.c.o.controller.OrderBookService - Thread[main,5,main]calling addOrders method
+02:21:43.228 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]calling service method
+02:21:43.228 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]orderBook is found with status CLOSED
+02:21:43.229 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]calling service method
+02:21:43.229 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status CLOSED
+02:21:43.229 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]calling service method
+02:21:43.230 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]orderBook is found with status CLOSED
+02:21:43.230 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]calling service method
+02:21:43.230 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status CLOSED
+02:21:43.232 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]calling service method
+02:21:43.232 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status CLOSED
+02:21:43.233 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]calling service method
+02:21:43.233 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]orderBook is found with status CLOSED
+02:21:43.249 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.249 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.249 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.249 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.249 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]calling service method
+02:21:43.249 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status CLOSED
+02:21:43.249 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.249 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.249 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.249 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.249 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.249 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.249 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.249 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.249 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.249 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]calling service method
+02:21:43.249 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status CLOSED
+02:21:43.249 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.249 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.249 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.249 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.249 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.249 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.249 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.249 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.249 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.249 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.249 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.249 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.249 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]calling service method
+02:21:43.249 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]orderBook is found with status CLOSED
+02:21:43.249 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]calling service method
+02:21:43.249 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]orderBook is found with status CLOSED
+02:21:43.265 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.265 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.265 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.265 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.265 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.265 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.265 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.265 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.265 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      1             2500            0
+02:21:43.265 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      2             1500            0
+02:21:43.265 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService -      3             1000            0
+02:21:43.265 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.265 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      1             2500            2500
+02:21:43.265 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      2             1500            1500
+02:21:43.265 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.265 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService -      3             1000            1000
+02:21:43.265 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.281 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]calling service method
+02:21:43.281 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status CLOSED
+02:21:43.281 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]calling service method
+02:21:43.281 [pool-3-thread-11] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-11,5,main]orderBook is found with status OPEN
+02:21:43.296 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.296 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      1             2500            0
+02:21:43.296 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.296 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      2             1500            0
+02:21:43.296 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -  orderId   distributed quantity  remainingQuantity 
+02:21:43.296 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService -      3             1000            0
+02:21:43.296 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - final remaining execution quantity 0
+02:21:43.306 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]calling service method
+02:21:43.306 [pool-3-thread-7] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-7,5,main]orderBook is found with status EXECUTED
+02:21:43.309 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]calling service method
+02:21:43.309 [pool-3-thread-6] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-6,5,main]orderBook is found with status EXECUTED
+02:21:43.309 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]calling service method
+02:21:43.309 [pool-3-thread-8] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-8,5,main]orderBook is found with status EXECUTED
+02:21:43.320 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]calling service method
+02:21:43.321 [pool-3-thread-4] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-4,5,main]orderBook is found with status EXECUTED
+02:21:43.322 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]calling service method
+02:21:43.322 [pool-3-thread-1] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-1,5,main]orderBook is found with status EXECUTED
+02:21:43.326 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]calling service method
+02:21:43.326 [pool-3-thread-9] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-9,5,main]orderBook is found with status EXECUTED
+02:21:43.326 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]calling service method
+02:21:43.326 [pool-3-thread-3] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-3,5,main]orderBook is found with status EXECUTED
+02:21:43.326 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]calling service method
+02:21:43.326 [pool-3-thread-10] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-10,5,main]orderBook is found with status EXECUTED
+02:21:43.326 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]calling service method
+02:21:43.326 [pool-3-thread-2] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-2,5,main]orderBook is found with status EXECUTED
+02:21:43.326 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]calling service method
+02:21:43.326 [pool-3-thread-5] INFO  c.c.o.controller.OrderBookService - Thread[pool-3-thread-5,5,main]orderBook is found with status EXECUTED
