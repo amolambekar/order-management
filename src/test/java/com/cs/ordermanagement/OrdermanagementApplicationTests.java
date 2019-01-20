@@ -49,33 +49,33 @@ public class OrdermanagementApplicationTests {
 		this.mockMvc.perform(post("/v1/instruments/{instrumentName}", "HSBC Holdings.")).andExpect(status().isCreated());
 		this.mockMvc.perform(post("/v1/instruments/{instrumentName}", "CS Ltd.")).andExpect(status().isCreated());
 		this.mockMvc.perform(post("/v1/orderbooks/{instrumentId}",new Long(1))).andExpect(status().isCreated());
-		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/{status}", new Long(1),"OPEN")).andExpect(status().is(200));
+		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/closeorderbook", new Long(1))).andExpect(status().is(200));
 		
 		this.mockMvc.perform(post("/v1/orderbooks/{instrumentId}",new Long(2))).andExpect(status().isCreated());
-		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/{status}", new Long(2),"OPEN")).andExpect(status().is(200));
+		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/closeorderbook", new Long(2))).andExpect(status().is(200));
 		
 		this.mockMvc.perform(post("/v1/orderbooks/{instrumentId}",new Long(3))).andExpect(status().isCreated());
-		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/{status}", new Long(2),"OPEN")).andExpect(status().is(200));
+		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/closeorderbook", new Long(2))).andExpect(status().is(500));
 		
 		List<Order> orders= TestDataLoder.addMarketOrders();
 		List<Order> limitOrders=TestDataLoder.createLimitOrders();
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = ow.writeValueAsString(orders);
-		this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/orders",new Long(1)).contentType(MediaType.APPLICATION_JSON).content(json)).andExpect(status().is(200));
-		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/{status}", new Long(1),"CLOSED")).andExpect(status().is(200));
+		this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/orders",new Long(1)).contentType(MediaType.APPLICATION_JSON).content(json)).andExpect(status().is(201));
+		this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/closeorderbook", new Long(1))).andExpect(status().is(500));
 		String result = this.mockMvc.perform(get("/v1/orders/{orderBookId}/count",new Long(1))).andReturn().getResponse().getContentAsString();
 	
 	}
 
     @Test
-	public void when_orderBookId_is_valid_then_new_order_book_status_is_updated_Successfully() throws Exception {
+	public void when_orderBookId_is_valid_then_executions_are_added_until_orderbook_is_executed() throws Exception {
 		
 		ExecutorService service = Executors.newCachedThreadPool();
 		for(int i=0;i<=10;i++) {
 		service.execute(()->{try {
-				this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/executions/{quantity}/{price}",new Long(1),new Long(5000),new BigDecimal(100l))).andExpect(status().is(200));
-				this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/{status}", new Long(1),"OPEN")).andExpect(status().is(200));
-				this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/executions/{quantity}/{price}",new Long(1),new Long(5000),new BigDecimal(100l))).andExpect(status().is(200));
+				this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/executions/{quantity}/{price}",new Long(1),new Long(5000),new BigDecimal(100l))).andExpect(status().is(201));
+				this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/closeorderbook", new Long(1))).andExpect(status().is(500));
+				this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/executions/{quantity}/{price}",new Long(1),new Long(5000),new BigDecimal(100l))).andExpect(status().is(201));
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -84,21 +84,5 @@ public class OrdermanagementApplicationTests {
 		}
 	service.awaitTermination(10, TimeUnit.SECONDS);
 	
-		
-	/*
-		ExecutorService service = Executors.newCachedThreadPool();
-		for(int i=0;i<=100;i++) {
-		service.execute(()->{try {
-			this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/{status}", new Long(1),"CLOSED")).andExpect(status().is(200));
-			this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/{status}", new Long(1),"OPEN")).andExpect(status().is(200));
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}});
-		}
-		service.awaitTermination(50, TimeUnit.SECONDS);*/
-}
-
-	
+    }	
 }

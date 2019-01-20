@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,13 +18,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cs.ordermanagement.InstrumentDAO;
-import com.cs.ordermanagement.domain.Execution;
-import com.cs.ordermanagement.domain.Instrument;
 import com.cs.ordermanagement.domain.Order;
 import com.cs.ordermanagement.domain.OrderBook;
-import com.cs.ordermanagement.domain.OrderBook.OrderBookStatus;
+import com.cs.ordermanagement.exception.ClosedOrderBookException;
+import com.cs.ordermanagement.exception.OrderManagementException;
 import com.cs.ordermanagement.repository.OrderBookRepository;
+import com.cs.ordermanagement.service.OrderBookService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,13 +35,11 @@ public class OrderBookController
 	
 	private OrderBookService orderBokkService;
 	
-	public InstrumentDAO instrumentDAO;
-	public OrderBookRepository orderBookRepository;
+	private OrderBookRepository orderBookRepository;
 
 	@Autowired
-	public OrderBookController(OrderBookService orderBookService,InstrumentDAO instrumentDAO,OrderBookRepository orderBookRepository) {
+	public OrderBookController(OrderBookService orderBookService,OrderBookRepository orderBookRepository) {
 		this.orderBokkService=orderBookService;
-		this.instrumentDAO=instrumentDAO;
 		this.orderBookRepository=orderBookRepository;
 	}
     
@@ -54,29 +52,42 @@ public class OrderBookController
 
 	}
 
-
-	
-	
 	@Transactional
-	@PutMapping(path="/{orderBookId}/{status}")
-	public void updateOrderBookStatus(@PathVariable(name="orderBookId")Long orderBookId,@PathVariable(name="status")String status) {
-	 orderBokkService.updateOrderBookStatus(orderBookId,status);
+	@PutMapping(path="/{orderBookId}/closeorderbook")
+	public ResponseEntity<Object> closeOrderBook(  @Valid @PathVariable(name="orderBookId")Long orderBookId) {
+		
+	 try {
+		orderBokkService.closeOrderBook(orderBookId);
+		return new ResponseEntity<Object>(HttpStatus.OK);
+	} catch (ClosedOrderBookException | OrderManagementException e) {
+		return new ResponseEntity<Object>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 
 	}
 	
 	@Transactional
 	@PostMapping(path="/{orderBookId}/orders")
-	public void addOrders(@PathVariable Long orderBookId,@RequestBody List<Order> orders){
-		orderBokkService.addOrders(orderBookId,orders);
+	public ResponseEntity<Object> addOrders(@PathVariable Long orderBookId,@RequestBody List<Order> orders){
+		try {
+			orderBokkService.addOrders(orderBookId,orders);
+			return new ResponseEntity<Object>(HttpStatus.CREATED);
+		} catch (OrderManagementException e) {
+			return new ResponseEntity<Object>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 	
 	@Transactional
 	@PostMapping(path="/{orderBookId}/executions/{quantity}/{price}") 
-	public void addExecution(@PathVariable(name="orderBookId") Long orderBookId, @PathVariable(name="quantity") Long quantity,@PathVariable(name="price") BigDecimal price) {
-		Execution executionId =this.orderBokkService.addExecution( orderBookId,quantity,price);
-		if(executionId!=null)
-		log.trace("the execution Id is ***********************************  "+executionId.getExecutionId());
+	public ResponseEntity<Object> addExecution(@PathVariable(name="orderBookId") Long orderBookId, @PathVariable(name="quantity") Long quantity,@PathVariable(name="price") BigDecimal price) {
+		try {
+			this.orderBokkService.addExecution( orderBookId,quantity,price);
+			return new ResponseEntity<Object>(HttpStatus.CREATED);
+		} catch (OrderManagementException e) {
+			log.error(e.getExceptionMessage());
+			return new ResponseEntity<Object>("An error occured while adding execution, please contact SYstem administrator",HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
+		
 	
 	@GetMapping(path="/{orderBookId}")
 	public ResponseEntity<OrderBook> findOrderBook(@PathVariable(name="orderBookId") Long orderBookId){

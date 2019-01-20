@@ -1,9 +1,8 @@
-package com.cs.ordermanagement.controller;
+package com.cs.ordermanagement.service;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 
@@ -20,9 +19,10 @@ import com.cs.ordermanagement.domain.OrderBook;
 import com.cs.ordermanagement.domain.OrderBook.OrderBookStatus;
 import com.cs.ordermanagement.domain.OrderExecution;
 import com.cs.ordermanagement.domain.OrderExecution.OrderStatus;
+import com.cs.ordermanagement.exception.ClosedOrderBookException;
+import com.cs.ordermanagement.exception.OrderManagementException;
 import com.cs.ordermanagement.repository.ExecutionRepository;
 import com.cs.ordermanagement.repository.OrderBookRepository;
-import com.cs.ordermanagement.repository.OrderRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -57,18 +57,20 @@ public class OrderBookService {
 	}
 
 	@Transactional
-	public Execution addExecution(final Long orderBookId, final Long quantity, final BigDecimal price) {
+	public Execution addExecution(final Long orderBookId, final Long quantity, final BigDecimal price) throws OrderManagementException {
 
-		Execution execution = null;
+		Execution execution = new Execution();
 		ReentrantLock orderBookLock = OrderBook.getLock(orderBookId);
-		log.info(Thread.currentThread() + "calling service method");
 		try {
 			orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS);
 			OrderBook orderBook = orderBookRepository.findOne(orderBookId);
 			
 
-			log.info(Thread.currentThread() + "orderBook is found with status " + orderBook.getOrderBookStatus());
-			if (orderBook.getOrderBookStatus().equals(OrderBookStatus.CLOSED)) {
+			log.info("orderBook is found with status " + orderBook.getOrderBookStatus());
+			if (!orderBook.getOrderBookStatus().equals(OrderBookStatus.CLOSED)) {
+				log.info("OrderBook status is "+orderBook.getOrderBookStatus()+". Execution cannot be added");
+				
+			}else {
 
 				setOrderStatusValidity(orderBook, price);
 				List<OrderExecution> validOrderExecutions = 
@@ -96,12 +98,10 @@ public class OrderBookService {
 					if(totalSum>0)
 					execution = applyExecution(quantity, orderBook, validOrderExecutions, price);
 				}
-			}else {
-				log.info("OrderBook status is "+orderBook.getOrderBookStatus()+". Execution cannot be added");
 			}
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			log.error("An error occured while adding execution to the orderBook", e1);
+			throw new OrderManagementException("An error occured while adding order, please contact system administartor");
 		} finally {
 			if (orderBookLock.isHeldByCurrentThread())
 				orderBookLock.unlock();
@@ -172,22 +172,24 @@ public class OrderBookService {
 	}
 
 	@Transactional
-	public void updateOrderBookStatus(final Long orderBookId, final String status) {
+	public void closeOrderBook(final Long orderBookId) throws ClosedOrderBookException, OrderManagementException {
 		
 
 		ReentrantLock orderBookLock = (ReentrantLock) (OrderBook.getLock(orderBookId));
 		try {
 			orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS);
 			OrderBook orderBook = orderBookRepository.findOne(orderBookId);
-
-			if (orderBook.getOrderBookStatus().equals(OrderBookStatus.EXECUTED) == false) {
-				orderBook.setOrderBookStatus(OrderBookStatus.valueOf(status));
+			OrderBookStatus status = orderBook.getOrderBookStatus();
+			if (status.equals(OrderBookStatus.EXECUTED) || status.equals(OrderBookStatus.CLOSED)) {
+				log.error("Orderbook  status is already "+status);
+				throw new ClosedOrderBookException("the orderBook is already closed");
+			}else {
+				orderBook.setOrderBookStatus(OrderBookStatus.CLOSED);
 				orderBookRepository.save(orderBook);
 			}
 
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		throw new OrderManagementException("An error occured while adding order, please contact system administartor");
 		} finally {
 			if (orderBookLock.isHeldByCurrentThread())
 				orderBookLock.unlock();
@@ -196,7 +198,7 @@ public class OrderBookService {
 
 	}
 
-	public void addOrders(final Long orderBookId, final List<Order> orders) {
+	public void addOrders(final Long orderBookId, final List<Order> orders) throws OrderManagementException {
 
 		
 		ReentrantLock orderBookLock = OrderBook.getLock(orderBookId);
@@ -213,8 +215,7 @@ public class OrderBookService {
 				orderBook.getOrders().stream().forEach(e -> System.out.println(e.getOrderId()));
 			}
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new OrderManagementException("An error occured while adding order, please contact system administartor");
 		} finally {
 			if (orderBookLock.isHeldByCurrentThread())
 				orderBookLock.unlock();

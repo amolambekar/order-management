@@ -23,11 +23,6 @@ public interface OrderBookRepository extends JpaRepository<OrderBook, Long>{
 	
 	OrderBook findOne(Long orderBookId);
 	
-	
-	
-	 OrderBook save(OrderBook orderBook);
-	 
-	
 	 @Modifying
 	 @Query("UPDATE OrderBook SET status= :status where orderBookId=:id") 
 	 void update(@Param("status") OrderBookStatus status,@Param("id") Long id);
