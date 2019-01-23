@@ -1,16 +1,16 @@
 package com.cs.ordermanagement.exception;
 
-public class OrderManagementException extends Exception {
+public class OrderBookManagementException extends Exception {
 	
 	private String message;
 
 	
-	public OrderManagementException(Throwable cause) {
+	public OrderBookManagementException(Throwable cause) {
 		this.message=cause.getMessage();
 		
 	}
 	
-	public OrderManagementException(String message) {
+	public OrderBookManagementException(String message) {
 		this.message=message;
 	}
 

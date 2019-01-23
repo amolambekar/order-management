@@ -1,9 +1,7 @@
 package com.cs.ordermanagement.controller;
 
-import java.math.BigDecimal;
 import java.util.List;
 
-import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cs.ordermanagement.domain.Order;
 import com.cs.ordermanagement.domain.OrderBook;
 import com.cs.ordermanagement.exception.ClosedOrderBookException;
-import com.cs.ordermanagement.exception.OrderManagementException;
+import com.cs.ordermanagement.exception.OrderBookManagementException;
 import com.cs.ordermanagement.repository.OrderBookRepository;
+import com.cs.ordermanagement.request.ExecutionReuest;
 import com.cs.ordermanagement.service.OrderBookService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -44,47 +43,46 @@ public class OrderBookController
 	}
     
 	
-	@Transactional
 	@PostMapping(path="/{instrumentId}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<OrderBook> openNewOrderBook(@PathVariable(name="instrumentId")Long instrumentId) {
-        OrderBook orderBook = orderBokkService.createAndopenNewWorkBook(instrumentId);
+        OrderBook orderBook = orderBokkService.createAndOpenNewOrderBook(instrumentId);
 		return new ResponseEntity<OrderBook>(orderBook,HttpStatus.CREATED);
 
 	}
 
-	@Transactional
+
 	@PutMapping(path="/{orderBookId}/closeorderbook")
 	public ResponseEntity<Object> closeOrderBook(  @Valid @PathVariable(name="orderBookId")Long orderBookId) {
 		
 	 try {
 		orderBokkService.closeOrderBook(orderBookId);
 		return new ResponseEntity<Object>(HttpStatus.OK);
-	} catch (ClosedOrderBookException | OrderManagementException e) {
+	} catch (ClosedOrderBookException | OrderBookManagementException e) {
 		return new ResponseEntity<Object>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	}
 	
-	@Transactional
+
 	@PostMapping(path="/{orderBookId}/orders")
 	public ResponseEntity<Object> addOrders(@PathVariable Long orderBookId,@RequestBody List<Order> orders){
 		try {
 			orderBokkService.addOrders(orderBookId,orders);
 			return new ResponseEntity<Object>(HttpStatus.CREATED);
-		} catch (OrderManagementException e) {
+		} catch (OrderBookManagementException e) {
 			return new ResponseEntity<Object>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
-	@Transactional
-	@PostMapping(path="/{orderBookId}/executions/{quantity}/{price}") 
-	public ResponseEntity<Object> addExecution(@PathVariable(name="orderBookId") Long orderBookId, @PathVariable(name="quantity") Long quantity,@PathVariable(name="price") BigDecimal price) {
+
+	@PostMapping(path="/{orderBookId}/executions") 
+	public ResponseEntity<Object> addExecution(@PathVariable  @Valid Long orderBookId, @Valid @RequestBody ExecutionReuest executionRequest) {
 		try {
-			this.orderBokkService.addExecution( orderBookId,quantity,price);
+			this.orderBokkService.addExecution( orderBookId,executionRequest.getQuantity(),executionRequest.getPrice());
 			return new ResponseEntity<Object>(HttpStatus.CREATED);
-		} catch (OrderManagementException e) {
+		} catch (OrderBookManagementException e) {
 			log.error(e.getExceptionMessage());
-			return new ResponseEntity<Object>("An error occured while adding execution, please contact SYstem administrator",HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Object>(e.getExceptionMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 		
@@ -97,15 +95,4 @@ public class OrderBookController
     
     }
 	
-	
-	
-	
-    	
-    
-    
-
-
-	
-	
-
-}
+ }

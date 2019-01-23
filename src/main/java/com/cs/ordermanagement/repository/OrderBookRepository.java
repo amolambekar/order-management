@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import com.cs.ordermanagement.domain.Order;
 import com.cs.ordermanagement.domain.OrderBook;
 import com.cs.ordermanagement.domain.OrderBook.OrderBookStatus;
 
@@ -26,6 +27,8 @@ public interface OrderBookRepository extends JpaRepository<OrderBook, Long>{
 	 @Modifying
 	 @Query("UPDATE OrderBook SET status= :status where orderBookId=:id") 
 	 void update(@Param("status") OrderBookStatus status,@Param("id") Long id);
+
+
 	 
 	 
 	 

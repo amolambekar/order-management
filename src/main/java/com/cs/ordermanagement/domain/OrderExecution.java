@@ -32,6 +32,9 @@ public class OrderExecution {
 	private Long quantity;
 	
 	@Column
+	private Long executedQuantity;
+	
+	@Column
 	private BigDecimal executionPrice;
 	
 	public enum OrderStatus{

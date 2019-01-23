@@ -20,9 +20,10 @@ import com.cs.ordermanagement.domain.OrderBook.OrderBookStatus;
 import com.cs.ordermanagement.domain.OrderExecution;
 import com.cs.ordermanagement.domain.OrderExecution.OrderStatus;
 import com.cs.ordermanagement.exception.ClosedOrderBookException;
-import com.cs.ordermanagement.exception.OrderManagementException;
+import com.cs.ordermanagement.exception.OrderBookManagementException;
 import com.cs.ordermanagement.repository.ExecutionRepository;
 import com.cs.ordermanagement.repository.OrderBookRepository;
+import com.cs.ordermanagement.repository.OrderExecutionRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,23 +31,27 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class OrderBookService {
 
-	public OrderBookRepository orderBookRepository;
+	private OrderBookRepository orderBookRepository;
 
-	@Autowired
-	public ExecutionRepository executionRepository;
+	private ExecutionRepository executionRepository;
+
+	private OrderExecutionRepository orderExecutionRepository;
 
 	private static final long TIME_OUT = 500L;
 
 	private static final TimeUnit TIME_UNIT_MILISECONDS = TimeUnit.MILLISECONDS;
 
 	@Autowired
-	public OrderBookService(OrderBookRepository orderBookRepository) {
+	public OrderBookService(OrderBookRepository orderBookRepository, ExecutionRepository executionRepository,
+			OrderExecutionRepository orderExecutionRepository) {
 
 		this.orderBookRepository = orderBookRepository;
+		this.executionRepository = executionRepository;
+		this.orderExecutionRepository = orderExecutionRepository;
 	}
 
 	@Transactional
-	public OrderBook createAndopenNewWorkBook(Long instrumentId) {
+	public OrderBook createAndOpenNewOrderBook(Long instrumentId) {
 		Instrument instrument = new Instrument();
 		instrument.setInstrumentId(instrumentId);
 		OrderBook orderBook = new OrderBook(instrument, null, null, OrderBookStatus.OPEN);
@@ -56,52 +61,51 @@ public class OrderBookService {
 		return orderBook;
 	}
 
-	@Transactional
-	public Execution addExecution(final Long orderBookId, final Long quantity, final BigDecimal price) throws OrderManagementException {
+	public Execution addExecutionToOrder(final Long orderBookId, final Long quantity, final BigDecimal price) {
+		Execution execution = new Execution();
+		return execution;
 
+	}
+
+	@Transactional
+	public Execution addExecution(final Long orderBookId, final Long quantity, final BigDecimal price)
+			throws OrderBookManagementException {
 		Execution execution = new Execution();
 		ReentrantLock orderBookLock = OrderBook.getLock(orderBookId);
+
 		try {
-			orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS);
-			OrderBook orderBook = orderBookRepository.findOne(orderBookId);
-			
 
-			log.info("orderBook is found with status " + orderBook.getOrderBookStatus());
-			if (!orderBook.getOrderBookStatus().equals(OrderBookStatus.CLOSED)) {
-				log.info("OrderBook status is "+orderBook.getOrderBookStatus()+". Execution cannot be added");
-				
-			}else {
+			if (orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS)) {
+				OrderBook orderBook = orderBookRepository.findOne(orderBookId);
+				log.info("orderBook is found with status " + orderBook.getOrderBookStatus());
+				if (orderBook.getOrderBookStatus().equals(OrderBookStatus.CLOSED) == false) {
+					log.error("OrderBook status is " + orderBook.getOrderBookStatus() + ". Execution cannot be added");
+					throw new OrderBookManagementException(
+							"OrderBook status is " + orderBook.getOrderBookStatus() + ". Execution cannot be added");
 
-				setOrderStatusValidity(orderBook, price);
-				List<OrderExecution> validOrderExecutions = 
-						orderBook.getOrders().stream().
-						peek(e -> {
+				} else {
 
-							if (e.getOrderType() == OrderType.LIMIT && e.getPrice().compareTo(price) < 0)
-								e.getOrderExecution().setOrderStatus(OrderStatus.INVALID);
-							e.getOrderExecution().setOrderStatus(OrderStatus.VALID);})
-						
-						
-						.filter(e -> (e.getOrderExecution().getOrderStatus().equals(OrderStatus.VALID))
-								&& e.getOrderExecution().getQuantity() > 0)
-						.map(e -> e.getOrderExecution())
-						.sorted((o1, o2) -> o2.getQuantity().compareTo(o1.getQuantity())).collect(Collectors.toList());
-				if (validOrderExecutions.size() > 0) {
-					Long totalSum = validOrderExecutions.stream().map(e -> e.getQuantity()).reduce(Long::sum).get();
-					log.info("total sum ****************************************"+totalSum);
-					// log.info("total valid sum is "+totalSum+ " "+execution.getQuantity());
-					if (quantity.equals(totalSum)) {
-						// log.info("setting order as executed");
-						orderBook.setOrderBookStatus(OrderBookStatus.EXECUTED);
+					setOrderStatusValidity(orderBook, price);
+					List<OrderExecution> orderExecutions = orderBook.getOrders().stream()
+							.map(e -> e.getOrderExecution()).collect(Collectors.toList());
+
+					List<OrderExecution> validOrderExecutions = orderExecutions.stream()
+							.filter(e -> (e.getOrderStatus().equals(OrderStatus.VALID)) && e.getQuantity() > 0)
+							.sorted((o1, o2) -> o2.getQuantity().compareTo(o1.getQuantity()))
+							.collect(Collectors.toList());
+
+					if (validOrderExecutions.size() > 0) {
+						Long totalSum = validOrderExecutions.stream().mapToLong(e -> e.getQuantity()).reduce(Long::sum)
+								.getAsLong();
+						if (totalSum > 0)
+							execution = applyExecution(quantity, orderBook, validOrderExecutions, price);
 					}
-					// log.info("start distribution");
-					if(totalSum>0)
-					execution = applyExecution(quantity, orderBook, validOrderExecutions, price);
 				}
 			}
 		} catch (InterruptedException e1) {
 			log.error("An error occured while adding execution to the orderBook", e1);
-			throw new OrderManagementException("An error occured while adding order, please contact system administartor");
+			throw new OrderBookManagementException(
+					"An error occured while adding order, please contact system administartor");
 		} finally {
 			if (orderBookLock.isHeldByCurrentThread())
 				orderBookLock.unlock();
@@ -109,113 +113,134 @@ public class OrderBookService {
 
 		return execution;
 
+	}
+
+	private void updateOrderExecution(final BigDecimal price, Order e) {
+		if (e.getOrderType() == OrderType.LIMIT && e.getPrice().compareTo(price) < 0)
+			e.getOrderExecution().setOrderStatus(OrderStatus.INVALID);
+		e.getOrderExecution().setOrderStatus(OrderStatus.VALID);
 	}
 
 	private Execution applyExecution(final Long quantity, final OrderBook orderBook,
 			final List<OrderExecution> validOrderExecutions, final BigDecimal price) {
 		Long executionQuantity = quantity;
 		while (executionQuantity > 0) {
-			Long totalDistributedQuantity = 0l;
-			Long intermediateSum = validOrderExecutions.stream().map(e -> e.getQuantity()).reduce(Long::sum).get();
-			if (intermediateSum > 0) {
-				for (OrderExecution orderExecution : validOrderExecutions) {
-					Long orderQuantity = orderExecution.getQuantity();
-					Long distributedQuantity = (orderQuantity * executionQuantity) / intermediateSum;
-
-					if (distributedQuantity > 0) {
-						orderExecution.setQuantity(orderQuantity - distributedQuantity);
-						totalDistributedQuantity = totalDistributedQuantity + distributedQuantity;
-
-					} else {
-						OrderExecution largestOrder = validOrderExecutions.get(0);
-						Long largestOrderCurrentQuantity = largestOrder.getQuantity();
-						largestOrder.setQuantity(largestOrderCurrentQuantity - executionQuantity);
-						totalDistributedQuantity = totalDistributedQuantity + executionQuantity;
-						log.info(Thread.currentThread() + " orderId   distributed quantity  remainingQuantity ");
-						log.info(Thread.currentThread() + "     " + largestOrder.getOrderId().getOrderId().longValue()
-								+ "             " + executionQuantity + "            " + largestOrder.getQuantity());
-						break;
-					}
-
-					log.info(" orderId   distributed quantity  remainingQuantity ");
-					log.info("     " + orderExecution.getOrderId().getOrderId() + "             " + orderExecution.getQuantity()
-							+ "            " + orderExecution.getQuantity());
-				}
-			}
-
-			executionQuantity = executionQuantity - totalDistributedQuantity;
-
+			executionQuantity = applyExecution(validOrderExecutions, executionQuantity);
 		}
-		log.info("final remaining execution quantity " + executionQuantity);
 
 		Execution execution = new Execution();
 		execution.setOrderBookId(orderBook.getOrderBookId());
 		execution.setPrice(price);
 		execution.setQuantity(quantity);
 		orderBook.getExecutions().add(execution);
-		orderBookRepository.save(orderBook);
-		executionRepository.save(execution);
+		Long totalExecutionQuantity = orderBook.getExecutions().stream().parallel().mapToLong(e -> e.getQuantity())
+				.reduce(Long::sum).getAsLong();
+		Long totalSum = validOrderExecutions.stream().mapToLong(e -> e.getQuantity() + e.getExecutedQuantity())
+				.reduce(Long::sum).getAsLong();
+		if (totalExecutionQuantity.equals(totalSum)) {
+			log.info("setting order as executed");
+			orderBook.setOrderBookStatus(OrderBookStatus.EXECUTED);
+		}
+		orderBookRepository.saveAndFlush(orderBook);
+		executionRepository.saveAndFlush(execution);
 
-		System.out.println("execution id is %%%%% " + execution.getExecutionId());
 		return execution;
+	}
+
+	private Long applyExecution(final List<OrderExecution> validOrderExecutions, Long executionQuantity) {
+		Long totalDistributedQuantity = 0l;
+		Long intermediateSum = validOrderExecutions.stream().map(e -> e.getQuantity()).reduce(Long::sum).get();
+		if (intermediateSum > 0) {
+			for (OrderExecution orderExecution : validOrderExecutions) {
+				Long orderQuantity = orderExecution.getQuantity();
+				Long distributedQuantity = (orderQuantity * executionQuantity) / intermediateSum;
+
+				if (distributedQuantity > 0) {
+					orderExecution.setQuantity(orderQuantity - distributedQuantity);
+					Long executedQuantity = orderExecution.getExecutedQuantity();
+					if (executedQuantity == null)
+						orderExecution.setExecutedQuantity(distributedQuantity);
+					orderExecution.setExecutedQuantity(orderExecution.getExecutedQuantity() + distributedQuantity);
+					totalDistributedQuantity = totalDistributedQuantity + distributedQuantity;
+
+				} else {
+					OrderExecution largestOrder = validOrderExecutions.get(0);
+					Long largestOrderCurrentQuantity = largestOrder.getQuantity();
+					largestOrder.setQuantity(largestOrderCurrentQuantity - executionQuantity);
+					totalDistributedQuantity = totalDistributedQuantity + executionQuantity;
+					log.info(Thread.currentThread() + " orderId   distributed quantity  remainingQuantity ");
+					log.info(Thread.currentThread() + "     " + largestOrder.getOrderId().getOrderId().longValue()
+							+ "             " + executionQuantity + "            " + largestOrder.getQuantity());
+					break;
+				}
+
+				log.info(" orderId   distributed quantity  remainingQuantity ");
+				log.info("     " + orderExecution.getOrderId().getOrderId() + "             " + distributedQuantity
+						+ "            " + orderExecution.getQuantity());
+			}
+		}
+
+		executionQuantity = executionQuantity - totalDistributedQuantity;
+		return executionQuantity;
 	}
 
 	private void setOrderStatusValidity(OrderBook orderBook, BigDecimal price) {
 		orderBook.getOrders().stream().forEach(e -> {
 
-			if (e.getOrderType() == OrderType.LIMIT && e.getPrice().compareTo(price) < 0)
-				e.getOrderExecution().setOrderStatus(OrderStatus.INVALID);
-			e.getOrderExecution().setOrderStatus(OrderStatus.VALID);
+			updateOrderExecution(price, e);
 			e.getOrderExecution().setExecutionPrice(price);
 
 		});
 	}
 
 	@Transactional
-	public void closeOrderBook(final Long orderBookId) throws ClosedOrderBookException, OrderManagementException {
-		
+	public void closeOrderBook(final Long orderBookId) throws ClosedOrderBookException, OrderBookManagementException {
 
 		ReentrantLock orderBookLock = (ReentrantLock) (OrderBook.getLock(orderBookId));
 		try {
-			orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS);
-			OrderBook orderBook = orderBookRepository.findOne(orderBookId);
-			OrderBookStatus status = orderBook.getOrderBookStatus();
-			if (status.equals(OrderBookStatus.EXECUTED) || status.equals(OrderBookStatus.CLOSED)) {
-				log.error("Orderbook  status is already "+status);
-				throw new ClosedOrderBookException("the orderBook is already closed");
-			}else {
-				orderBook.setOrderBookStatus(OrderBookStatus.CLOSED);
-				orderBookRepository.save(orderBook);
-			}
+			if (orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS)) {
 
+				OrderBook orderBook = orderBookRepository.findOne(orderBookId);
+				OrderBookStatus status = orderBook.getOrderBookStatus();
+				if (status.equals(OrderBookStatus.EXECUTED) || status.equals(OrderBookStatus.CLOSED)) {
+					log.error("Orderbook  status is already " + status);
+					throw new ClosedOrderBookException("the orderBook is already closed");
+				} else {
+					orderBook.setOrderBookStatus(OrderBookStatus.CLOSED);
+					orderBookRepository.saveAndFlush(orderBook);
+				}
+			}
 		} catch (InterruptedException e) {
-		throw new OrderManagementException("An error occured while adding order, please contact system administartor");
+			throw new OrderBookManagementException(
+					"An error occured while adding order, please contact system administartor");
 		} finally {
-			if (orderBookLock.isHeldByCurrentThread())
+			if (orderBookLock.isHeldByCurrentThread()) {
 				orderBookLock.unlock();
+			}
 
 		}
 
 	}
 
-	public void addOrders(final Long orderBookId, final List<Order> orders) throws OrderManagementException {
+	public void addOrders(final Long orderBookId, final List<Order> orders) throws OrderBookManagementException {
 
-		
 		ReentrantLock orderBookLock = OrderBook.getLock(orderBookId);
 		try {
-			log.info(Thread.currentThread() + "calling addOrders method");
-			orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS);
-			OrderBook orderBook = orderBookRepository.findOne(orderBookId);
+			if (orderBookLock.tryLock(TIME_OUT, TIME_UNIT_MILISECONDS)) {
+				OrderBook orderBook = orderBookRepository.findOne(orderBookId);
 
-			if (orderBook.getOrderBookStatus().equals(OrderBookStatus.OPEN)) {
-				for (Order order : orders)
-					order.getOrderExecution().setQuantity(order.getOrderQuantity());
-				orderBook.getOrders().addAll(orders);
-				orderBookRepository.save(orderBook);
-				orderBook.getOrders().stream().forEach(e -> System.out.println(e.getOrderId()));
+				if (orderBook.getOrderBookStatus().equals(OrderBookStatus.OPEN)) {
+					for (Order order : orders) {
+						order.getOrderExecution().setQuantity(order.getOrderQuantity());
+						order.getOrderExecution().setOrderId(order);
+					}
+					orderBook.getOrders().addAll(orders);
+					orderBookRepository.save(orderBook);
+				}
 			}
 		} catch (InterruptedException e1) {
-			throw new OrderManagementException("An error occured while adding order, please contact system administartor");
+			throw new OrderBookManagementException(
+					"An error occured while adding order, please contact system administartor");
 		} finally {
 			if (orderBookLock.isHeldByCurrentThread())
 				orderBookLock.unlock();

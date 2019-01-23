@@ -41,8 +41,7 @@ public class OrderBook implements Serializable {
 	
 	private static final long serialVersionUID = -4514295710367090347L;
 	
-	//private final Map<String, OrderBook> accounts = new WeakH<>();
-	
+
 	public OrderBook (Instrument instrument,List<Order>orders,List<Execution>executions,OrderBookStatus status) {
 		this.instrumentId=instrument;
 		this.orders=orders;
@@ -61,7 +60,7 @@ public class OrderBook implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER, optional = false)
 	private Instrument instrumentId;
 
-	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY )
+	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER )
 	@JoinColumn(name = "order_book_id")
 	private List<Order> orders = new ArrayList<>();
 
