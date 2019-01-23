@@ -112,9 +112,9 @@ public class OrderBookService {
 	}
 
 	private void validateExecutionPrice(List<Execution> executions,BigDecimal price) throws ExecutionPriceMisMatchException {
-		
 		if(executions!=null && executions.size()>0) {
-			if(executions.get(0).getPrice()!=price) {
+			int compareVal= executions.get(0).getPrice().compareTo(price);
+			if(compareVal!=0) {
 				throw new ExecutionPriceMisMatchException("Requested xecution price does not match with existing execution price");
 			}
 		}

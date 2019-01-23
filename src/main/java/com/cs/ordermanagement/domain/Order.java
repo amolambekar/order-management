@@ -19,18 +19,22 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
-@Setter
 @Entity
+@NoArgsConstructor
 @Table(name="ORDER_TABLE")
 public class Order {
 	
-	public Order() {
+	public Order(OrderType orderType,Long orderQuantity,BigDecimal price,Instrument instrumentId ) {
+		this.orderType=orderType;
+		this.orderQuantity=orderQuantity;
+		this.price=price;
+		this.instrumentId=instrumentId;
 		this.orderExecution= new OrderExecution();
 	}
 
@@ -63,11 +67,14 @@ public class Order {
 	@JoinColumn(name="OrderExecutionId")
 	private OrderExecution orderExecution;
 	
+	
+	   @JsonIgnore
 	   @CreationTimestamp
 	   @Temporal(TemporalType.TIMESTAMP)
 	   @Column
 	   private Date entryDate;
 	   
+	   @JsonIgnore
 	   @CreationTimestamp
 	   @Temporal(TemporalType.TIMESTAMP)
 	   @Column
@@ -77,6 +84,7 @@ public class Order {
 	@OneToOne
 	private Instrument instrumentId;
 	
+	@NotNull
 	@Column
 	private BigDecimal price;
 	

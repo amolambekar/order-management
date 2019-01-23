@@ -70,11 +70,14 @@ public class OrdermanagementApplicationTests {
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = ow.writeValueAsString(request);
 		
+		
 		for(int i=0;i<10;i++) {
 		service.execute(()->{try {
 			this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/executions",new Long(1)).contentType(MediaType.APPLICATION_JSON).content(json));
 			this.mockMvc.perform(put("/v1/orderbooks/{orderBookId}/closeorderbook", new Long(1))).andExpect(status().is(500));
 			this.mockMvc.perform(post("/v1/orderbooks/{orderBookId}/executions",new Long(1)).contentType(MediaType.APPLICATION_JSON).content(json));
+
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
