@@ -1,23 +1,14 @@
 package com.cs.ordermanagement.exception;
 
-public class OrderBookManagementException extends Exception {
+public class OrderBookManagementException extends ApplicationException {
 	
-	private String message;
 
-	
-	public OrderBookManagementException(Throwable cause) {
-		this.message=cause.getMessage();
-		
-	}
-	
+	private static final long serialVersionUID = -5598168616631311533L;
+
 	public OrderBookManagementException(String message) {
-		this.message=message;
+		super(message);
 	}
 
-	public String getExceptionMessage() {
-		return this.message;
-	}
-
-	private static final long serialVersionUID = 1L;
+	
 
 }

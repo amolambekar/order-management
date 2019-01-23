@@ -20,10 +20,10 @@ import com.cs.ordermanagement.domain.OrderBook.OrderBookStatus;
 import com.cs.ordermanagement.domain.OrderExecution;
 import com.cs.ordermanagement.domain.OrderExecution.OrderStatus;
 import com.cs.ordermanagement.exception.ClosedOrderBookException;
+import com.cs.ordermanagement.exception.ExecutionPriceMisMatchException;
 import com.cs.ordermanagement.exception.OrderBookManagementException;
 import com.cs.ordermanagement.repository.ExecutionRepository;
 import com.cs.ordermanagement.repository.OrderBookRepository;
-import com.cs.ordermanagement.repository.OrderExecutionRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,19 +35,15 @@ public class OrderBookService {
 
 	private ExecutionRepository executionRepository;
 
-	private OrderExecutionRepository orderExecutionRepository;
-
 	private static final long TIME_OUT = 500L;
 
 	private static final TimeUnit TIME_UNIT_MILISECONDS = TimeUnit.MILLISECONDS;
 
 	@Autowired
-	public OrderBookService(OrderBookRepository orderBookRepository, ExecutionRepository executionRepository,
-			OrderExecutionRepository orderExecutionRepository) {
+	public OrderBookService(OrderBookRepository orderBookRepository, ExecutionRepository executionRepository) {
 
 		this.orderBookRepository = orderBookRepository;
 		this.executionRepository = executionRepository;
-		this.orderExecutionRepository = orderExecutionRepository;
 	}
 
 	@Transactional
@@ -69,7 +65,7 @@ public class OrderBookService {
 
 	@Transactional
 	public Execution addExecution(final Long orderBookId, final Long quantity, final BigDecimal price)
-			throws OrderBookManagementException {
+			throws OrderBookManagementException, ExecutionPriceMisMatchException {
 		Execution execution = new Execution();
 		ReentrantLock orderBookLock = OrderBook.getLock(orderBookId);
 
@@ -84,7 +80,7 @@ public class OrderBookService {
 							"OrderBook status is " + orderBook.getOrderBookStatus() + ". Execution cannot be added");
 
 				} else {
-
+                    validateExecutionPrice(orderBook.getExecutions(),price);
 					setOrderStatusValidity(orderBook, price);
 					List<OrderExecution> orderExecutions = orderBook.getOrders().stream()
 							.map(e -> e.getOrderExecution()).collect(Collectors.toList());
@@ -113,6 +109,18 @@ public class OrderBookService {
 
 		return execution;
 
+	}
+
+	private void validateExecutionPrice(List<Execution> executions,BigDecimal price) throws ExecutionPriceMisMatchException {
+		
+		if(executions!=null && executions.size()>0) {
+			if(executions.get(0).getPrice()!=price) {
+				throw new ExecutionPriceMisMatchException("Requested xecution price does not match with existing execution price");
+			}
+		}
+			
+	
+		
 	}
 
 	private void updateOrderExecution(final BigDecimal price, Order e) {

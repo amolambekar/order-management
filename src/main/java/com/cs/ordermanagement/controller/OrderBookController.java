@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cs.ordermanagement.domain.Order;
 import com.cs.ordermanagement.domain.OrderBook;
 import com.cs.ordermanagement.exception.ClosedOrderBookException;
+import com.cs.ordermanagement.exception.ExecutionPriceMisMatchException;
 import com.cs.ordermanagement.exception.OrderBookManagementException;
 import com.cs.ordermanagement.repository.OrderBookRepository;
 import com.cs.ordermanagement.request.ExecutionReuest;
@@ -80,9 +81,9 @@ public class OrderBookController
 		try {
 			this.orderBokkService.addExecution( orderBookId,executionRequest.getQuantity(),executionRequest.getPrice());
 			return new ResponseEntity<Object>(HttpStatus.CREATED);
-		} catch (OrderBookManagementException e) {
-			log.error(e.getExceptionMessage());
-			return new ResponseEntity<Object>(e.getExceptionMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+		} catch (OrderBookManagementException  | ExecutionPriceMisMatchException e) {
+			log.error(e.getMessage());
+			return new ResponseEntity<Object>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 		

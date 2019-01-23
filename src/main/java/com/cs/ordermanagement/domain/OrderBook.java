@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import javax.persistence.CascadeType;
@@ -25,7 +24,6 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 
 import com.cs.ordermanagement.repository.OrderBookRepository;
-import com.cs.ordermanagement.repository.OrderRepository;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

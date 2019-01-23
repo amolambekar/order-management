@@ -1,17 +1,14 @@
 package com.cs.ordermanagement.exception;
 
-public class ClosedOrderBookException extends Exception {
+public class ClosedOrderBookException extends ApplicationException {
 	
-	private String message;
+	private static final long serialVersionUID = -1833492150189964808L;
 
 	public ClosedOrderBookException(String message) {
-		this.message=message;
-	}
-	
-	public String getExceptionMessage() {
-		return this.message;
+		super(message);
 	}
 
-	private static final long serialVersionUID = -1833492150189964808L;
+
+
 
 }
