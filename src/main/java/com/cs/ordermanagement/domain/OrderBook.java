@@ -22,6 +22,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.cs.ordermanagement.repository.OrderBookRepository;
 
@@ -34,6 +35,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 
+@RepositoryRestResource(collectionResourceRel = "orderBooks", path = "orderBooks")
 public class OrderBook implements Serializable {
 
 	

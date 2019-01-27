@@ -39,8 +39,7 @@ java -jar target/ordermanagement-0.0.1-SNAPSHOT.jar
 
 
 #Junit Covergae
-
-![Alt text](/src/test/resources/junit_coverage.gif?raw=true "Junit Coverage")
+[ScreenShot](/src/test/resources/junit_coverage.gif)
 
 
 # Application Metrix
@@ -58,12 +57,24 @@ http://localhost:8080/trace
 
 Spring Boot Actuator provides dependency management and auto-configuration for Micrometer, an application metrics facade that supports numerous monitoring systems, including:
 
-AppOptics
-Atlas
-Datadog
-Dynatrace
-Elastic
-JMX
+.AppOptics
+.Atlas
+.Datadog
+.Dynatrace
+.Elastic
+.JMX 
+
+# Order statistics
+
+Order entity exposes spring data REST APIs to provide different statistics for orders added to the order-book.
+these APIs can be access from swagger-UI using URL http://localhost:8080/swagger-ui.html#/Order32Entity
+It makes sense for these APIs to reside under OrderRespository as many statistics are fetched using parameters like price which are not available in order-book.
+Alternatively , customized REST methods can be added in controller but as all statistics methods are GET operation, it's been avoided.
+
+
+
+
+
 
 # Future Scalability 
 
@@ -75,9 +86,10 @@ Further enhancement cane be done by creating infrastructure services such as API
 The application can be configured to create docker image to make is easily deployable across different platforms.
 
 #TODO
-1. use message properties instead of hardcoded messages.
+1. use message properties instead of hard coded messages.
 2. Use spring validations for input parameters
-3. current junit tests cater to basic application requiremment, additional test can be written to cover more scenarios and exceptional flows
+3. current junit tests cater to basic application requirements, additional test can be written to cover more scenarios and exceptional flows
+3. disable update and delete operations for OrderRespository
 
 
 
