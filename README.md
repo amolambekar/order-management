@@ -1,6 +1,6 @@
 # order-management
 
-Travis CI status: https://travis-ci.com/amolambekar/order-management.svg?branch=master
+Travis CI status: [![Build Status](https://travis-ci.com/amolambekar/order-management.svg?branch=master)](https://travis-ci.com/amolambekar/order-management)
 
 order-management  system manages order books. 
 An order book is an electronic list of orders for a specific financial instrument. 
