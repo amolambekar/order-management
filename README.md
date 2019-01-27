@@ -39,7 +39,7 @@ java -jar target/ordermanagement-0.0.1-SNAPSHOT.jar
 
 
 #Junit Covergae
-[ScreenShot](/src/test/resources/junit_coverage.gif)
+[ScreenShot](/src/test/resources/Junit_coverage.gif)
 
 
 # Application Metrix
@@ -70,6 +70,7 @@ Order entity exposes spring data REST APIs to provide different statistics for o
 these APIs can be access from swagger-UI using URL http://localhost:8080/swagger-ui.html#/Order32Entity
 It makes sense for these APIs to reside under OrderRespository as many statistics are fetched using parameters like price which are not available in order-book.
 Alternatively , customized REST methods can be added in controller but as all statistics methods are GET operation, it's been avoided.
+[ScreenShot](/src/test/resources/Order_statistic_API_on-swagger_UI)
 
 
 
@@ -78,8 +79,8 @@ Alternatively , customized REST methods can be added in controller but as all st
 
 # Future Scalability 
 
-The application exposes stateless APIs for creating orders,orderbook and adding exeuctions.
-The application uses Java Lock API to synchronize access to Orderbook. These locks can be added to Hazelcast or Reddi cache and be accessed in code by getting it from one fo such disributed cache to make sure that synchronization works when multiple instances of the application are running.
+The application exposes state less APIs for creating orders,orderbook and adding executions.
+The application uses Java Lock API to synchronize access to Orderbook. These locks can be added to Hazelcast or Reddis cache and be accessed in code by getting it from one for such distributed cache to make sure that synchronization works when multiple instances of the application are running.
 
 The application is solely focusing on Orderbook managemnet and can be deployed as micro-service and is already following some of the 12 factor app principles such as port binding and logging.concurrency and codebase.
 Further enhancement cane be done by creating infrastructure services such as API gateway, service discovery and config server and configuring the order-management application to use these services.
