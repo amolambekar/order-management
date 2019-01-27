@@ -1,5 +1,7 @@
 # order-management
 
+Travis CI status: https://travis-ci.com/amolambekar/order-management.svg?branch=master
+
 order-management  system manages order books. 
 An order book is an electronic list of orders for a specific financial instrument. 
 A financial instrument is identified by unique instrument id. 
